@@ -1,38 +1,31 @@
 ## kcptun for Android
 
-[kcptun](https://github.com/shadowsocks/kcptun) plugin for [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android). 
+[![CircleCI](https://circleci.com/gh/shadowsocks/kcptun-android.svg?style=svg)](https://circleci.com/gh/shadowsocks/kcptun-android)
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+[![Releases](https://img.shields.io/github/downloads/shadowsocks/kcptun-android/total.svg)](https://github.com/shadowsocks/kcptun-android/releases)
+[![Language: Kotlin](https://img.shields.io/github/languages/top/shadowsocks/kcptun-android.svg)](https://github.com/shadowsocks/kcptun-android/search?l=kotlin)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/46b34df6fe624ef9a46507126f407880)](https://www.codacy.com/app/shadowsocks/kcptun-android?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shadowsocks/kcptun-android&amp;utm_campaign=Badge_Grade)
+[![License](https://img.shields.io/github/license/shadowsocks/kcptun-android.svg)](https://github.com/shadowsocks/kcptun-android/blob/master/LICENSE)
+
+[kcptun](https://github.com/shadowsocks/kcptun) plugin for [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android).
 
 <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks.plugin.kcptun"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="48"></a>
-
-### CI STATUS
-
-[![Build Status](https://api.travis-ci.org/shadowsocks/kcptun-android.svg)](https://travis-ci.org/shadowsocks/kcptun-android)
 
 ### PREREQUISITES
 
 * JDK 1.8
-* SBT 0.13.0+
-* Go 1.4+
+* Go 1.11+
 * Android SDK
-  - Build Tools 25+
-  - Android Support Repository (see `build.sbt` for version)
-* Android NDK r12b+
+  - Android NDK r19+
 
 ### BUILD
 
+You can check whether the latest commit builds under UNIX environment by checking CI status.
+
 * Set environment variable `ANDROID_HOME` to `/path/to/android-sdk`
-* Set environment variable `ANDROID_NDK_HOME` to `/path/to/android-ndk`
-* Set environment variable `GOROOT_BOOTSTRAP` to `/path/to/go`
-* Create your key following the instructions at https://developer.android.com/studio/publish/app-signing.html
-* Create `local.properties` from `local.properties.example` with your own key information
-* Invoke the building like this
-
-```bash
-    git submodule update --init --recursive
-
-    # Build the App
-    sbt clean go-build android:package-release
-```
+* (optional) Set environment variable `ANDROID_NDK_HOME` to `/path/to/android-ndk` (default: `$ANDROID_HOME/ndk-bundle`)
+* Clone the repo using `git clone --recurse-submodules <repo>` or update submodules using `git submodule update --init --recursive`
+* Build it using Android Studio or gradle script
 
 ### TRANSLATE
 
